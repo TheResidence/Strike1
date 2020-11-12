@@ -26,7 +26,5 @@ public class Cannon {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-
 	}
-
 }

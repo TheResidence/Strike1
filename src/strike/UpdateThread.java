@@ -1,9 +1,12 @@
 package strike;
 
-public class UpdateThread extends Thread {
+import java.util.TimerTask;
 
-    @Override
-    public void run() {
-
-    }
+public class UpdateThread extends TimerTask {
+	@Override
+	public void run() {
+		for (int i = 0; i < Meteorit.meteorites.size(); i++) {
+			Meteorit.meteorites.get(i).update();
+		}
+	}
 }
