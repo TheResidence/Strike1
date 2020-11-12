@@ -19,10 +19,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.UIManager;
 
 public class GamePanel extends JPanel {
 			
@@ -54,7 +52,7 @@ public class GamePanel extends JPanel {
 		t = new Timer(1000, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Tick();
+				DrawThread();
 			}
 		});
 		
@@ -95,7 +93,7 @@ public class GamePanel extends JPanel {
 		pauseGame();
 	}
 
-	private void Tick() {
+	private void DrawThread() {
 		PunkteCounter++;
 		if (PunkteCounter > 59)
 			endGame();

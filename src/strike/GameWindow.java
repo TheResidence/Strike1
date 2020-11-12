@@ -27,7 +27,6 @@ public class GameWindow extends JFrame {
 
 		this.StrikeGamePanel = new GamePanel();
 
-		registerWindowListener();
 		createMenu();
 
 		add(StrikeGamePanel);
@@ -46,24 +45,7 @@ public class GameWindow extends JFrame {
 
 	}
 
-	private void registerWindowListener() {
-		addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent e) {
-				System.exit(0);
-			}
 
-			@Override
-			public void windowDeactivated(WindowEvent e) {
-				StrikeGamePanel.pauseGame();
-			}
-
-			@Override
-			public void windowActivated(WindowEvent e) {
-				StrikeGamePanel.continueGame();
-			}
-		});
-	}
 
 	private void createMenu() {
 
