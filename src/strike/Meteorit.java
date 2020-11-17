@@ -1,9 +1,6 @@
 package strike;
 
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +8,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+/***
+ * @author Shivam Sherma
+ */
 public class Meteorit {
 
 	public static ArrayList<Meteorit> meteorites = new ArrayList<Meteorit>();
@@ -30,6 +30,15 @@ public class Meteorit {
 		}
 	}
 
+	/***
+	 *
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 * @param velX
+	 * @param velY
+	 */
 	Meteorit(double x, double y, double width, double height, double velX, double velY) {
 		this.x = x;
 		this.y = y;
@@ -38,12 +47,16 @@ public class Meteorit {
 		this.velX = velX;
 		this.velY = velY;
 
-		image = Strike.resize(originalImage, 100, 100);
+		image = Strike.resize(originalImage, 150, 150);
 		image = Strike.rotate(image, Math.atan2(velY, velX) - Math.PI / 2D);
 
 		meteorites.add(this);
 	}
 
+	/***
+	 *
+	 * @param g2d
+	 */
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(image, (int) x, (int) y, null);
 	}

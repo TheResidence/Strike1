@@ -1,11 +1,13 @@
 
 package strike;
 
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
 import javax.swing.JFrame;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/***
+ * @author Shivam Sherma
+ */
 public class GameWindow extends JFrame {
 	GamePanel gamePanel;
 
@@ -17,6 +19,7 @@ public class GameWindow extends JFrame {
 
 		gamePanel = new GamePanel();
 		add(gamePanel);
+		gamePanel.addMouseListener(new MouseHandler());
 
 		setTitle("Strike");
 		setLocation(10, 10);

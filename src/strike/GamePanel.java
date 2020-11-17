@@ -5,8 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.text.DecimalFormat;
 
+/***
+ * @author Shivam Sherma
+ */
 public class GamePanel extends JPanel {
 
 	public static BufferedImage i;
@@ -19,6 +21,10 @@ public class GamePanel extends JPanel {
 		}
 	}
 
+	/***
+	 *
+	 * @param g
+	 */
 	@Override
 	protected void paintComponent(Graphics g) {
 
@@ -27,12 +33,14 @@ public class GamePanel extends JPanel {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		// Background
-		g2d.drawImage(i, 0, 0, null);
+		g2d.drawImage(i, 0, 0, Strike.screenSize.width, Strike.screenSize.height, null);
 
 		for (int i = 0; i < Meteorit.meteorites.size(); i++) {
 			Meteorit.meteorites.get(i).draw(g2d);
 		}
-
+		for (int i = 0; i < Bullet.ammo.size(); i++) {
+			Bullet.ammo.get(i).draw(g2d);
+		}
+		Strike.cannon.draw(g2d);
 	}
-
 }
