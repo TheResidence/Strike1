@@ -27,7 +27,7 @@ public class Cannon {
 
     static {
         try {
-            imageBlaster = ImageIO.read(new File("Images/FalkBlaster.png"));
+            imageBlaster = ImageIO.read(new File("Images/Falken.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
