@@ -27,7 +27,6 @@ public class Strike {
         window = new GameWindow();
         for (int i = 0; i < 99; i++)
             new Meteorit(Math.random() * window.getWidth(), -400, 200, 200, Math.random() * 3 - 1.5, Math.random() * 3);
-        collision();
     }
 
     /***
