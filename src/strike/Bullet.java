@@ -1,11 +1,14 @@
 package strike;
 
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
+import javax.swing.Timer;
 /***
  * @author Shivam Sherma
  */
@@ -36,7 +39,6 @@ public class Bullet {
         offY /= dist;
         new Bullet(Strike.cannon.x + Strike.cannon.width / 2, Strike.cannon.y + Strike.cannon.height / 2, WIDTH, HEIGHT, offX * 20, offY * 20);
     }
-
     /***
      *
      * @param x X position
@@ -57,7 +59,6 @@ public class Bullet {
         image = Strike.rotate(image, Math.atan2(velY, velX) - Math.PI / 2D);
         ammo.add(this);
     }
-
     /***
      *
      * @param g2d Bullet Image
@@ -78,7 +79,7 @@ public class Bullet {
         }
     }
 
-    private boolean collidesWith(Meteorit meteorit) {
+     boolean collidesWith(Meteorit meteorit) {
         double offX = Math.abs(x - meteorit.x);
         double offY = Math.abs(y - meteorit.y);
         double dist = Math.sqrt(offX * offX + offY * offY);

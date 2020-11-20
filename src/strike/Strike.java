@@ -13,7 +13,7 @@ public class Strike {
     public static Dimension screenSize;
     public static GameWindow window;
     public static Cannon cannon;
-
+    private static int collisionCounter = 1;
     /***
      *
      * @param args the command line arguments
@@ -27,6 +27,10 @@ public class Strike {
         window = new GameWindow();
         for (int i = 0; i < 99; i++)
             new Meteorit(Math.random() * window.getWidth(), -400, 200, 200, Math.random() * 3 - 1.5, Math.random() * 3);
+        if (collidesWith(Meteorit.meteorites.get(i)))  {
+            System.out.println(collisionCounter);
+            collisionCounter++;
+        }
     }
 
     /***
