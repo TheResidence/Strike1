@@ -9,10 +9,6 @@ import javax.swing.JPanel;
 
 public class Menu extends JFrame{
 
-    public static void main(String[] args){
-        new Menu();
-    }
-
     //Konstruktor
     public Menu(){
         super("Strike");

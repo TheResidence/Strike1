@@ -25,6 +25,7 @@ public class Strike {
      */
     public static void main(String[] args) {
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        new Menu();
         cannon = new Cannon(screenSize.width / 2d - 150, screenSize.height - 400, 300, 300);
         window = new GameWindow();
         for (int i = 0; i < 100; i++)
