@@ -11,6 +11,17 @@ public class GameWindow extends JFrame {
 	TimerTask drawThread = new DrawThread();
 	TimerTask updateThread = new UpdateThread();
 
+	/***
+	 * adds the GamePanel
+	 * activates the Mousehandler
+	 * sets the Title and the Location of Strike
+	 * creates a timer and Schedules the specified task for repeated fixed-rate execution,
+	 * beginning after the specified delay.
+	 * Subsequent executions take place at approximately regular intervals,
+	 * separated by the specified period.
+	 * In fixed-rate execution,
+	 * each execution is scheduled relative to the scheduled execution time of the initial execution.
+	 */
 	public GameWindow() {
 		gamePanel = new GamePanel();
 		add(gamePanel);
@@ -24,4 +35,5 @@ public class GameWindow extends JFrame {
 		t.scheduleAtFixedRate(drawThread, 0, 1000 / 60);
 		t.scheduleAtFixedRate(updateThread, 0, 1000 / 60);
 	}
+
 }

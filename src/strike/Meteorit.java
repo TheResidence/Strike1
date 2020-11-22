@@ -18,6 +18,9 @@ public class Meteorit {
 	public static BufferedImage originalImage;
 	public BufferedImage image;
 
+	/***
+	 * creates the Image for the Meteorit
+	 */
 	static {
 		try {
 			originalImage = ImageIO.read(new File("Images/Meteorit.png"));
@@ -27,12 +30,12 @@ public class Meteorit {
 	}
 	/***
 	 *
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
-	 * @param velX
-	 * @param velY
+	 * @param x position
+	 * @param y position
+	 * @param width of the meteorites
+	 * @param height of the meteorites
+	 * @param velX of the meteorites in X way
+	 * @param velY of the meteorites in Y way
 	 */
 	Meteorit(double x, double y, double width, double height, double velX, double velY) {
 		this.x = x;
@@ -47,7 +50,9 @@ public class Meteorit {
 	}
 	/***
 	 *
-	 * @param g2d
+	 * @param g2d the Image of the Meteorites which will be drawn
+	 * updates the velocity in X,Y way
+	 * X,Y position + velx/velY
 	 */
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(image, (int) x, (int) y, null);

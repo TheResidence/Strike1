@@ -3,6 +3,7 @@ package strike;
 import java.util.TimerTask;
 /***
  * @author Shivam Sherma
+ * Thread which Updates the meteorites and the bullets
  */
 public class UpdateThread extends TimerTask {
 	@Override
