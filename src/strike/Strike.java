@@ -14,7 +14,6 @@ public class Strike {
     public static GameWindow window;
     public static Cannon cannon;
     public static int collisionCounter = 0;
-    private BufferedImage image;
     /***
      *
      * @param args the command line arguments
