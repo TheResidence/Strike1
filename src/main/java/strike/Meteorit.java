@@ -2,7 +2,6 @@ package strike;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
@@ -11,28 +10,31 @@ import javax.imageio.ImageIO;
  */
 public class Meteorit {
 
-	public static ArrayList<Meteorit> meteorites = new ArrayList<Meteorit>();
+	public static ArrayList<Meteorit> meteorites = new ArrayList<>();
 	public double x, y;
 	public double width, height;
 	public double velX, velY;
 	public static BufferedImage originalImage;
 	public BufferedImage image;
 
+	/***
+	 * creates the Image for the Meteorit
+	 */
 	static {
 		try {
-			originalImage = ImageIO.read(new File("Images/Meteorit.png"));
+			originalImage = ImageIO.read(Meteorit.class.getResource("/Meteorit.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	/***
 	 *
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
-	 * @param velX
-	 * @param velY
+	 * @param x position
+	 * @param y position
+	 * @param width of the meteorites
+	 * @param height of the meteorites
+	 * @param velX of the meteorites in X way
+	 * @param velY of the meteorites in Y way
 	 */
 	Meteorit(double x, double y, double width, double height, double velX, double velY) {
 		this.x = x;
@@ -47,7 +49,9 @@ public class Meteorit {
 	}
 	/***
 	 *
-	 * @param g2d
+	 * @param g2d the Image of the Meteorites which will be drawn
+	 * updates the velocity in X,Y way
+	 * X,Y position + velX/velY
 	 */
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(image, (int) x, (int) y, null);

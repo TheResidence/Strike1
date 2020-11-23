@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 /***
  * @author Shivam Sherma
+ * creates the Image of the Cannon
  */
 public class Cannon {
     public double x, y;
@@ -14,16 +15,16 @@ public class Cannon {
     public static BufferedImage imageBlaster;
     static {
         try {
-            imageBlaster = ImageIO.read(new File("Images/Falken.png"));
+            imageBlaster = ImageIO.read(Cannon.class.getResource("/Falken.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     /***
-     * @param x
-     * @param y
-     * @param width
-     * @param height
+     * @param x position
+     * @param y position
+     * @param width of the Cannon
+     * @param height of the Cannon
      */
     Cannon(double x, double y, double width, double height) {
         this.x = x;
@@ -32,7 +33,7 @@ public class Cannon {
         this.height = height;
     }
     /***
-     * @param g2d
+     * @param g2d is the image of the cannon which will be drawn
      */
     public void draw(Graphics2D g2d) {
         g2d.drawImage(imageBlaster, (int) x, (int) y, (int) width, (int) height, null);

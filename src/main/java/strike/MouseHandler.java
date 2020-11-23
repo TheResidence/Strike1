@@ -2,7 +2,10 @@ package strike;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+/***
+ * @author Shivam Sherma
+ * if Button 1 of the Mouse is pressed the Bullets will spawn
+ */
 public class MouseHandler implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
