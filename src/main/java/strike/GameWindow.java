@@ -1,33 +1,21 @@
 package strike;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.util.Timer;
 import java.util.TimerTask;
-/***
+
+/**
  * @author Shivam Sherma
  */
 public class GameWindow extends JFrame {
-
-	public Object createMenu;
-
-	public void createMenu() {
-
-		JMenuBar menuBar = new JMenuBar();
-		this.setJMenuBar(menuBar);
-		JMenu gameMenu = new JMenu("Game");
-		menuBar.add(gameMenu);
-		addFileMenuItems(gameMenu);
-	}
-	private void addFileMenuItems(JMenu fileMenu) {
-		JMenuItem quitItem = new JMenuItem("Quit");
-		fileMenu.add(quitItem);
-	}
-
 	GamePanel gamePanel;
 	TimerTask drawThread = new DrawThread();
 	TimerTask updateThread = new UpdateThread();
 
-	/***
+	/**
 	 * adds the GamePanel
 	 * activates the Mousehandler
 	 * sets the Title and the Location of Strike
@@ -44,12 +32,21 @@ public class GameWindow extends JFrame {
 		gamePanel.addMouseListener(new MouseHandler());
 		setTitle("Strike");
 		setLocation(10, 10);
-		setResizable(false);
+		setResizable(true);
+		setSize(800, 600);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setVisible(true);
 		Timer t = new Timer();
+
+		addComponentListener(new ComponentAdapter() {
+			public void componentResized(ComponentEvent evt) {
+				Strike.cannon.x = gamePanel.getWidth() / 2d - 150;
+				Strike.cannon.y = gamePanel.getHeight() - 400;
+				Strike.screenSize = new Dimension(gamePanel.getWidth(), gamePanel.getHeight());
+			}
+		});
+
 		t.scheduleAtFixedRate(drawThread, 0, 1000 / 60);
 		t.scheduleAtFixedRate(updateThread, 0, 1000 / 60);
 	}
-
 }

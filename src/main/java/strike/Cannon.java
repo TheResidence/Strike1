@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-/***
+/**
  * @author Shivam Sherma
  * creates the Image of the Cannon
  */
@@ -20,7 +20,7 @@ public class Cannon {
             e.printStackTrace();
         }
     }
-    /***
+    /**
      * @param x position
      * @param y position
      * @param width of the Cannon
@@ -32,7 +32,7 @@ public class Cannon {
         this.width = width;
         this.height = height;
     }
-    /***
+    /**
      * @param g2d is the image of the cannon which will be drawn
      */
     public void draw(Graphics2D g2d) {
