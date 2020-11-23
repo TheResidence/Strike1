@@ -7,6 +7,8 @@ import java.time.OffsetDateTime;
 /**
  * @author Shivam Sherma
  * if Button 1 of the Mouse is pressed the Bullets will spawn
+ * After loosing the Game the full Game Resets
+ *
  */
 public class MouseHandler implements MouseListener {
 	@Override

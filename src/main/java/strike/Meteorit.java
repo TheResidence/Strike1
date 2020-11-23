@@ -35,6 +35,7 @@ public class Meteorit {
 	 * @param height of the meteorites
 	 * @param velX   of the meteorites in X way
 	 * @param velY   of the meteorites in Y way
+	 * the image resizes and rotates the image
 	 */
 	Meteorit(double x, double y, double width, double height, double velX, double velY) {
 		this.x = x;
@@ -57,11 +58,13 @@ public class Meteorit {
 		g2d.drawImage(image, (int) x, (int) y, null);
 	}
 
+	/**
+	 * provides that the Meteorites doesnt break out of the GameWindow
+	 */
 	public void update() {
 		x += velX;
 		y += velY;
 		x = Math.max(Math.min(Strike.screenSize.getWidth() - width, x), 0);
-		//y = Math.max(Math.min(Strike.screenSize.getHeight() - height, y), -200);
 	}
 
 	public double getX() {

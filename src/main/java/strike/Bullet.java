@@ -33,7 +33,7 @@ public class Bullet {
 	/**
 	 * @param mouseX position of the Mouse
 	 * @param mouseY position of the Mouse
-	 *               The Bullets are directly going to the Position where the Mouse klicks
+	 * The Bullets are directly going to the Position where the Mouse klicks
 	 */
 	public static void spawnBullets(int mouseX, int mouseY) {
 		double offX = (mouseX - WIDTH / 2) - (Strike.cannon.x + Strike.cannon.width / 2);
@@ -72,15 +72,8 @@ public class Bullet {
 	}
 
 	/**
-	 * Here we loop from back to front with the for loop,<br>
-	 * because otherwise there would be problems if I had looped through from the front.<br>
-	 * Because accordingly he would first get the index = 0;<br>
-	 * look and execute the process normally for this.<br>
-	 * As soon as the index = 0; has disappeared, the index becomes = 1; to index = 0;<br>
-	 * and the index = 2; becomes index = 1; This would mean that after each collision,<br>
-	 * the index of all objects is subtracted by 1, while the index i is continuously increased by 1.<br>
-	 * A meteorite would always be missed, where the collision would not work.<br>
-	 * To avoid this you have to loop backwards with the for loop.<br>
+	 * Here we loop backward trough the Meteorites
+	 * if the Meteorites collide with the Bullet both will be removed
 	 */
 	public void update() {
 		x += velX;

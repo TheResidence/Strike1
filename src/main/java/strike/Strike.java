@@ -37,7 +37,7 @@ public class Strike {
 	 * @param image Meteorites
 	 * @param angle Meteorites angle
 	 *              rotates the image at the angle
-	 * @return BufferedImage
+	 * @return BufferedImage Transforms the source BufferedImage and stores the results in the destination BufferedImage.
 	 */
 	public static BufferedImage rotate(BufferedImage image, double angle) {
 		AffineTransform tx = AffineTransform.getRotateInstance(angle, image.getWidth() / 2D, image.getHeight() / 2D);

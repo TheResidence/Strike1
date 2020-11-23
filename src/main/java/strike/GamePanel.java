@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 /**
  * @author Shivam Sherma
  * creates the Background image of Strike
+ * creates the GameOver image after loosing
  */
 public class GamePanel extends JPanel {
 	public static BufferedImage background;

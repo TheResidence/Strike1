@@ -1,24 +1,26 @@
 package strike;
 
-import java.nio.channels.SelectionKey;
-import java.time.Duration;
-import java.time.OffsetDateTime;
 import java.util.TimerTask;
 
 /**
  * @author Shivam Sherma
- * Thread which Updates the meteorites and the bullets
+ *
  */
 public class UpdateThread extends TimerTask {
 	public static int spawnMeteorit = 0;
 
+	/**
+	 * The meteorites spawn
+	 * The Bullets spawn
+	 * If you loose the Meteorites will return to 0 and spawn again
+	 */
 	@Override
 	public void run() {
 		if (Strike.dead) return;
 		spawnMeteorit++;
 
-		if (spawnMeteorit >= 50) {
-			new Meteorit(Math.random() * (Strike.screenSize.getWidth() - 200), -200, 200, 200, (Math.random() - 0.5) * 2, Math.random() * 2 + 2);
+		if (spawnMeteorit >= 25) {
+			new Meteorit(Math.random() * (Strike.screenSize.getWidth() - 200), -200, 200, 200, (Math.random() - 0.5) * 2, Math.random() * 2 + 4);
 			spawnMeteorit = 0;
 		}
 
